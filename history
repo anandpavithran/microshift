@@ -1,0 +1,35 @@
+   11  fdisk -l
+   12  pvcreate /dev/{vdb,vdc,vdd}
+   13  vgcreate vmdisk /dev/{vdb,vdc,vdd}
+   14  vgs
+   32  subscription-manager register
+   39  subscription-manager attach --auto
+   41  subscription-manager repos     --enable rhocp-4.13-for-rhel-9-$(uname -m)-rpms     --enable fast-datapath-for-rhel-9-$(uname -m)-rpms
+   42  dnf -y install microshift openshift-clients lvm2
+   43  vim openshift-pull-secret
+   44  cp openshift-pull-secret /etc/crio/openshift-pull-secret
+   45  chown root:root /etc/crio/openshift-pull-secret
+   46  chmod 600 /etc/crio/openshift-pull-secret
+   47  cp lvmd.yaml /etc/microshift/
+   48  systemctl enable microshift --now
+   49  cp /var/lib/microshift/resources/kubeadmin/kubeconfig ~/.kube/config
+   50  oc get pod -A
+   55  vim /etc/microshift/config.yaml.default 
+   66  firewall-cmd --list-all
+   67  systemctl stop firewalld
+   68  firewall-cmd --list-all
+   74  oc create namespace test100
+   81  oc create deployment test1 --image quay.io/anandpavithran/infosys:2.0 -n test100 
+   85  oc get pod,svc -n test100
+   86  oc get node
+   88  oc create service clusterip test1 --tcp=8080:8080 -n test100
+   89  oc get svc -n test100
+   96  oc get endpoints -n test100
+   97  curl http://10.42.0.8:8080
+   98  ifconfig 
+   99  oc get pod -A
+  108  oc set volumes deployment/test1 --add --name example-pv-storage --type pvc --claim-class topolvm-provisioner --claim-mode rwo --claim-size 10Gi --mount-path /var/www/html --claim-name example-pv-claim -n test100
+  110  oc get sc
+  111  oc get pv 
+  112  oc get pvc -n test100 
+  113  oc describe sc
