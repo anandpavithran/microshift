@@ -25,7 +25,14 @@ Step-9
 Download pullsecret from following url using the webbrowser
 https://console.redhat.com/openshift/create/local
 Step-10
-
+cp openshift-pull-secret /etc/crio/openshift-pull-secret
+   45  chown root:root /etc/crio/openshift-pull-secret
+   46  chmod 600 /etc/crio/openshift-pull-secret
+   47  cp lvmd.yaml /etc/microshift/
+   48  systemctl enable microshift --now
+mkdir .kube
+   49  cp /var/lib/microshift/resources/kubeadmin/kubeconfig ~/.kube/config
+   50  oc get pod -A
 
 
 
