@@ -1,4 +1,26 @@
-#Step-1
+Step-1
 Access the RH134 Workstation.
-Open firefox and download the file from the following link
+Step-2
+Open firefox and download the file (microshiftrepo.tar) from the following link
 https://drive.google.com/file/d/1k3fODGbKbrzkgf_i7jQy8hkeEc6LJCol/view?usp=sharing
+Step-3
+Copy the file to servera machine
+scp /home/student/Download/microshiftrepo.tar student@servera:
+Step-4
+From workstation, access servera as student user
+ssh student@servera
+Step-5
+From terminal of servera list the files
+ls 
+Step-6
+Extract the packages required for installation
+tar -xvf microshiftrepo.tar
+Step-7
+Switch to package directory
+cd /home/student/root/microshiftrepo
+Step-8
+Install the required packages.
+sudo dnf install * -y
+
+
+
