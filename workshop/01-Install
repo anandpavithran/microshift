@@ -21,6 +21,11 @@ cd /home/student/root/microshiftrepo
 Step-8
 Install the required packages.
 sudo dnf install * -y
+Step-9
+Download pullsecret from following url using the webbrowser
+https://console.redhat.com/openshift/create/local
+Step-10
+
 
 
 
