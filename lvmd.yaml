@@ -1,0 +1,6 @@
+socket-name:
+  device-classes:
+      - name: vmdisk
+        volume-group: vmdisk
+        spare-gb: 0
+        default: true
