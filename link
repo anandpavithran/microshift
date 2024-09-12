@@ -1,0 +1,5 @@
+https://docs.openshift.com/dedicated/authentication/understanding-and-managing-pod-security-admission.html#:~:text=To%20disable%20pod%20security%20admission,scc.podSecurityLabelSync%20label%20to%20false%20.&text=To%20enable%20pod%20security%20admission,scc.podSecurityLabelSync%20label%20to%20true%20.
+https://developer.ibm.com/learningpaths/secure-context-constraints-openshift/deployment-specify-permissions/
+https://kubernetes.io/docs/tasks/configure-pod-container/enforce-standards-namespace-labels/
+https://kubernetes.io/docs/concepts/security/pod-security-admission/
+https://docs.redhat.com/en/documentation/red_hat_build_of_microshift/4.15/html-single/running_applications/index#microshift-security-context-constraints-opting_authentication-microshift
