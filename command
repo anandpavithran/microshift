@@ -4,3 +4,4 @@ oc create -f namespace1.yaml
   726  oc get pod
   727  oc adm policy add-scc-to-user anyuid -z default -n test900
 oc set serviceaccount deployment test5 default
+http://test76-test700.apps.example.com:80
