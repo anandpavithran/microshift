@@ -13,3 +13,6 @@ $ journalctl -t logging-test.sh -o json-pretty
 echo 'hello' | systemd-cat -p info
 echo 'hello' | systemd-cat -p warning
 echo 'hello' | systemd-cat -p emerg
+
+REALMD
+https://www.redhat.com/sysadmin/linux-active-directory
