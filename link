@@ -4,3 +4,12 @@ https://kubernetes.io/docs/tasks/configure-pod-container/enforce-standards-names
 https://kubernetes.io/docs/concepts/security/pod-security-admission/
 https://docs.redhat.com/en/documentation/red_hat_build_of_microshift/4.15/html-single/running_applications/index#microshift-security-context-constraints-opting_authentication-microshift
 https://developer.ibm.com/learningpaths/secure-context-constraints-openshift/scc-tutorial/
+
+JOURNALCTL
+
+systemd-run --user --wait ./logging-test.sh
+$ journalctl -t logging-test.sh
+$ journalctl -t logging-test.sh -o json-pretty
+echo 'hello' | systemd-cat -p info
+echo 'hello' | systemd-cat -p warning
+echo 'hello' | systemd-cat -p emerg
